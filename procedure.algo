@@ -1,0 +1,50 @@
+PROCEDURE dot_product(  v1,  v2 , var sum)
+VAR
+    sum:INTEGER:=0
+    m:INTEGER
+    v1:vecteur1 : ARRAY_OF INTEGER[100];
+    v2:vecteur1:array_name : ARRAY_OF INTEGER[100];
+BEGIN
+    FOR m FROM 0 TO v1.length-1   DO
+        sum=sum+(v1[m]*v2[m])
+    END_FOR
+END
+
+
+
+ALGORITHM orthogonal
+VAR
+    v1:vecteur1 : ARRAY_OF INTEGER[100];
+    v2:vecteur1:array_name : ARRAY_OF INTEGER[100];
+    n,i,j,k:INTEGER
+BEGIN
+read(n)
+    FOR k FROM 0 to n-1 DO
+        FOR i FROM 0 TO n-1   DO
+        read (v1[i])
+
+        END_FOR
+        FOR j FROM 0 TO n-1   DO
+        read(v2[j])
+        END_FOR
+    dot_product(v1,v2)
+    IF (sum=0) THEN
+        write ("orthogonal")
+    END_IF
+    END FOR
+END
+
+
+
+FUNCTION produit scalaire( v1, v2) : INTEGER
+VAR
+    v1:vecteur1 : ARRAY_OF INTEGER[100];
+    v2:vecteur1:array_name : ARRAY_OF INTEGER[100];
+    sum:INTEGER:=0
+    n:INTEGER
+BEGIN
+    FOR n FROM 0 TO v1.length-1   DO
+        sum=sum+(v1[n]*v2[n])
+    END_FOR
+    RETURN sum ;
+END
